@@ -26,7 +26,7 @@ def calculate():
         textbox.insert(tk.END, "Please enter a VALID input")
         return
     
-
+#edit
     #Split into 2 values
     parts = calculation.split(operator)
     #if len(parts) != 2:
