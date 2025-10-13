@@ -52,6 +52,8 @@ def calculate():
         elif operator == "√":
             results = value1*(math.sqrt(value2))
             #results = value2 ** (1/value1)
+        elif operator == "sin":
+            results = math.sin(value1)
         elif operator == "÷":
             if value2 == 0:
                 textbox.delete("1.0", tk.END)
@@ -107,9 +109,17 @@ for i in range(1, 10):
     button = tk.Button(buttonsframe, text=str(i), font=('Arial', 18), bg='lightgray', command=lambda i=i: appendText(i))
     button.grid(row=(i-1)//3, column=(i-1)%3, sticky=tk.W+tk.E, padx=3, pady=3)
 
+#Create sin button
+operators = ["sin"]
+for i, o in enumerate(operators):
+    button = tk.Button(buttonsframe, text="sin", font=('Arial', 18), fg='lightblue', command=lambda o=o: appendText(o))
+    button.grid(row=3, column=0, sticky=tk.W+tk.E, padx=3, pady=3)
+    buttonsframe.pack(fill='x', padx=4, pady=2)
+
 #Create zero button
 b0 = tk.Button(buttonsframe, text="0", font=('Arial', 18),fg='orange', command=lambda: appendText(0))
 b0.grid(row=3, column=1, sticky=tk.W+tk.E, padx=4, pady=2)
+
 
 #Create operator buttons
 operators = ["+", "-", "x", "÷"]
