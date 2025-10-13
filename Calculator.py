@@ -12,7 +12,6 @@ def appendText(value):
 #Perform calculations
 def calculate():
     calculation = textbox.get("1.0", tk.END).strip()
-   # results = " ".join(calculation.split())
 
 
 #Finding an operator
@@ -29,10 +28,6 @@ def calculate():
 #edit
     #Split into 2 values
     parts = calculation.split(operator)
-    #if len(parts) != 2:
-     #   textbox.delete("1.0", tk.END)
-      #  textbox.insert(tk.END, "Please enter a valid input: ")
-       # return 
     if len(parts) == 1:
         textbox.delete("1.0", tk.END)
         textbox.insert(tk.END,f"Answer: {results}")
@@ -51,7 +46,6 @@ def calculate():
             results = value1 ** value2
         elif operator == "√":
             results = value1*(math.sqrt(value2))
-            #results = value2 ** (1/value1)
         elif operator == "sin":
             results = math.sin(value1)
         elif operator == "÷":
@@ -90,10 +84,7 @@ for i in range(4):
     buttonsframe.columnconfigure(i, weight=1)
 for i in range(6):
     buttonsframe.rowconfigure(i,weight=1)
-#buttonsframe.columnconfigure(0, weight=1)
-#buttonsframe.columnconfigure(1, weight=1)
-#buttonsframe.columnconfigure(2, weight=1)
-#buttonsframe.columnconfigure(3, weight=1)
+
 
 #Create the answer button
 answer_button = tk.Button(root, text="Answer", font = ('Arial', 18), bg='green', fg='blue', command=calculate)
@@ -125,14 +116,12 @@ b0.grid(row=3, column=1, sticky=tk.W+tk.E, padx=4, pady=2)
 operators = ["+", "-", "x", "÷"]
 for i, o in enumerate(operators):
     button = tk.Button(buttonsframe, text=o, font=('Arial', 18), fg='lightblue', command=lambda o=o: appendText(o))
-    #button.grid(row=i//2, column=3, sticky=tk.W+tk.E, padx=2,pady=2)
     button.grid(row=i, column=3, sticky=tk.W+tk.E, padx=2, pady=2)
     buttonsframe.pack(fill='x', padx=10, pady=20)
 
 operators = ["%", "^",".", "√"]
 for i, o in enumerate(operators):
     button = tk.Button(buttonsframe, text=o, font=('Arial', 18), fg='lightblue', command=lambda o=o: appendText(o))
-    #button.grid(row=i//2, column=3, sticky=tk.W+tk.E, padx=2,pady=2)
     button.grid(row=5, column=(i-1)%4, sticky=tk.W+tk.E, padx=3, pady=3)
     buttonsframe.pack(fill='x', padx=10, pady=20)
 
