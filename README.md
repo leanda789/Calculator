@@ -7,9 +7,9 @@
 
 - Scientific calculations: addition, subtraction, multiplication, power, surds in the form
 - Financial functions: Future Value, Present Value, ROI
-- Clean GUI with intuitive button layout
+- GUI with button layout
 - Error handling for invalid inputs
 
 
 #What did I gain from this experience?
-I gained an interest in financial mathematics and showed me how code can solve real-world money problems.
+I gained an interest in financial mathematics and showed me how programming contributes to the financial sector.
