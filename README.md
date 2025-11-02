@@ -1,4 +1,4 @@
-#Financial Calculator
+# GUI Financial Calculator
 
 #Tools - Python,tKinter & Math library
 
